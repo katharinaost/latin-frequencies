@@ -3,7 +3,7 @@
 Simple script that generates word frequency lists for Latin texts
 
 ## Prerequisites
-spaCy with the [LatinCy](https://huggingface.co/latincy) pipeline (la_core_web_lg model), XlsxWriter 
+[spaCy](https://spacy.io/) with the [LatinCy](https://huggingface.co/latincy) pipeline (la_core_web_lg model), [XlsxWriter](https://github.com/jmcnamara/XlsxWriter) 
 
  ```sh
 pip install -U XlsxWriter
@@ -23,9 +23,9 @@ Example:
 ![Excel output](https://i.imgur.com/rYAt8Ni.png)
  
  ### Arguments
-* path: Path of a file or folder to process (obligatory).
+* filename/folder: Path of a file or folder to process (obligatory).
 * __--stopwords__=filename: Path of a textfile containing a list of stop words (one entry per line). If not supplied, the default stop-word list of the spaCy model is used. Point this to an empty file, if you don't want to use any stop words.
 * __--output__=filename: Where to store the output. If not supplied, output will be printed to stdout.
 * __--output_type__=excel/csv: What kind of output to generate. Only applies if --output is specified, defaults to "csv".
 * __--coverage__=n: Lists the most common lemmata in descending order until at least "n" percent of vocabulary coverage is achieved. Takes precedence over --top.
-* __--top__=n: Lists the "n" most frequent lemmata. If neither --coverage or --top are supplied, all lemmata are listed. 
+* __--top__=n: Lists the "n" most frequent lemmata. If neither --coverage nor --top are supplied, all lemmata are listed. 
