@@ -2,7 +2,7 @@
 """
 Created on Sun Jun  4 08:10:04 2023
 
-@author: katha
+@author: Katharina Ost
 """
 
 import argparse
@@ -30,7 +30,6 @@ parser.add_argument('--coverage', action='store', type = int,
 parser.add_argument('--top', action='store', type = int,
                     help='Get the top x most frequent words')
 args = parser.parse_args()
-
 
 if not Path(args.input).exists():
     print("The input file/folder does not exist. Exiting.")
@@ -82,7 +81,7 @@ if args.coverage != None:
         lemma_coverage = counter / total
         if round(lemma_coverage*100) >= args.coverage:
             break
-#or just count the top x
+#... or just count the top x?
 else:
     #if args.top is None, all lemmata are returned
     common_words = word_frequencies.most_common(args.top)
@@ -104,22 +103,23 @@ if args.output != None:
             workbook = xlsxwriter.Workbook('output.xlsx')
             worksheet = workbook.add_worksheet()
             bold = workbook.add_format({'bold': True})
-            
             row = 1
             col = 0
             
-            # Write header
+            #write header
             worksheet.write('A1', 'Lemma', bold)
             worksheet.write('B1', 'POS', bold)
             worksheet.write('C1', 'Count', bold)
              
-            # Write data
+            #write data
             for word in common_words:
                 worksheet.write(row, col, word[0][0])     #lemma
                 worksheet.write(row, col + 1, word[0][1]) #pos
                 worksheet.write(row, col + 2, word[1])    #count
                 row += 1
             workbook.close()
+            
+#... or print the output to stdout
 else:
     print('The following stop words were used: ', end = '')
     for word in nlp.Defaults.stop_words:
@@ -130,6 +130,7 @@ else:
     for word in common_words:
         print(word[0][0] +', ' + word [0][1] + ', ' + str(word[1]))
 
+#give us some coverage information:
 count = 0
 for word in common_words:
     count += word[1]
