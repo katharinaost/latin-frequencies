@@ -12,4 +12,6 @@ Example:
  ```
  Collects lemma frequencies for all (plaintext) files in the "documents" directory, using the supplied stop-word file. Returns the top lemmata until at least 80% coverage are achieved in an excel file.
  
+![Excel output](https://i.imgur.com/rYAt8Ni.png)
+ 
  
