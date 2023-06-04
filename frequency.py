@@ -24,7 +24,7 @@ parser.add_argument('--output', action='store', type = str,
                     help='Store output in file')
 parser.add_argument('--output_type', action='store', type = str,
                     choices = ['excel', 'csv'], default ='csv',
-                    help='Store output in file')
+                    help='Which filetype to generate')
 parser.add_argument('--coverage', action='store', type = int,
                     help='Achieve x% of vocabulary coverage')
 parser.add_argument('--top', action='store', type = int,
