@@ -24,7 +24,7 @@ Example:
  
  ### Arguments
 * path: Path of a file or folder to process (obligatory).
-* __--stopwords__=filename: Path of a textfile containing a list of stop words (one entry per line). If not supplied, the default stop-word list oft the spaCy model is used. So if you don't want to exclude stop words, point this to an empty file.
+* __--stopwords__=filename: Path of a textfile containing a list of stop words (one entry per line). If not supplied, the default stop-word list of the spaCy model is used. Point this to an empty file, if you don't want to use any stop words.
 * __--output__=filename: Where to store the output. If not supplied, output will be printed to stdout.
 * __--output_type__=excel/csv: What kind of output to generate. Only applies if --output is specified, defaults to "csv".
 * __--coverage__=n: Lists the most common lemmata in descending order until at least "n" percent of vocabulary coverage is achieved. Takes precedence over --top.
