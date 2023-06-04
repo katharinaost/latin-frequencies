@@ -3,7 +3,7 @@
 Simple script that generates word frequency lists for Latin texts
 
 ## Prerequisites
-[spaCy](https://spacy.io/) with the [LatinCy](https://huggingface.co/latincy) pipeline (la_core_web_lg model), [XlsxWriter](https://github.com/jmcnamara/XlsxWriter) 
+[spaCy](https://spacy.io/) with the la_core_web_lg [LatinCy](https://huggingface.co/latincy) pipeline, [XlsxWriter](https://github.com/jmcnamara/XlsxWriter) 
 
  ```sh
 pip install -U XlsxWriter
